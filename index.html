@@ -90,6 +90,42 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
 
+        /* banner header */
+        .banner-header {
+            position: relative;
+            background-image: url('dp.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .banner-header .overlay {
+            background: rgba(0,0,0,0.4);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .animated-title {
+            font-size: 2.8rem;
+            animation: fadeInDown 1.5s ease forwards;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         .profile-img {
             width: 150px;
             height: 150px;
@@ -310,11 +346,12 @@
         </ul>
     </nav>
 
-    <!-- Header with Profile Picture -->
-    <header>
-        <img src="dp.jpeg" alt="Timothy Katasa" class="profile-img">
-        <h1>Welcome to My Personal Profile</h1>
-        <p>Software Developer | Passionate Coder | Tech Enthusiast</p>
+    <!-- Header with Background Banner -->
+    <header class="banner-header">
+        <div class="overlay">
+            <h1 class="animated-title">Welcome to My Personal Profile</h1>
+            <p>Software Developer | Passionate Coder | Tech Enthusiast</p>
+        </div>
     </header>
 
     <!-- About Me Section -->
