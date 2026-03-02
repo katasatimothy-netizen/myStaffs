@@ -39,6 +39,32 @@
             flex-wrap: wrap;
         }
 
+        .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                background-color: rgba(0,0,0,0.7);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                padding: 1rem 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
         nav a {
             color: #fff;
             text-decoration: none;
@@ -273,7 +299,10 @@
 <body>
     <!-- Navigation Bar -->
     <nav>
-        <ul>
+        <div class="menu-toggle" id="menuToggle">
+            &#9776;
+        </div>
+        <ul id="navLinks">
             <li><a href="#about">About Me</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">My Projects</a></li>
@@ -367,5 +396,25 @@
     <footer>
         <p>&copy; 2026 Timothy Katasa. All rights reserved.</p>
     </footer>
+
+    <!-- JavaScript for menu toggle -->
+    <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            const isVisible = navLinks.style.display === 'flex';
+            navLinks.style.display = isVisible ? 'none' : 'flex';
+        });
+
+        // optional: close nav when link clicked on mobile
+        document.querySelectorAll('#navLinks a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
