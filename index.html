@@ -122,11 +122,23 @@
         }
 
         .header-content {
-            max-width: 60%;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            max-width: 70%;
         }
 
-        .header-content h1,
-        .header-content p {
+        .banner-profile {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .text-block h1,
+        .text-block p {
             text-align: left;
         }
 
@@ -399,8 +411,11 @@
     <header class="banner-header">
         <div class="overlay">
             <div class="header-content">
-                <h1 class="animated-title">Welcome to My Personal Profile</h1>
-                <p>Software Developer | Passionate Coder | Tech Enthusiast</p>
+                <img src="dp.jpeg" alt="Profile" class="banner-profile">
+                <div class="text-block">
+                    <h1 class="animated-title">Welcome to My Personal Profile</h1>
+                    <p>Software Developer | Passionate Coder | Tech Enthusiast</p>
+                </div>
             </div>
         </div>
     </header>
